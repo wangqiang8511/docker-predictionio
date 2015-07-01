@@ -1,0 +1,3 @@
+VERSION=$(cat VERSION)
+docker build $@ -t predictionio .
+docker tag -f predictionio:latest predictionio:$VERSION
