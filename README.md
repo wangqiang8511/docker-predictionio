@@ -6,9 +6,9 @@ Dockerfiler for predictionio.
 * system: ubunutu 14.04
 
 This is not full instanlation for PredictionIO. In our case, we 
-will use exsiting hbase cluster and spark cluster, hdfs cluster 
+will use exsiting hbase cluster, spark cluster, hdfs cluster 
 and elasticsearch cluster. PredictionIO is more like driver scripts
-instead of deploying everything insided it. We think in this case
+instead of deploying everything inside it. We think in this case
 different components can scale out seperately.
 
 For original docker image build script for PredictionIO, please see 
@@ -20,4 +20,10 @@ Build Image
 
 ```bash
 ./build
+```
+
+Run pio command.
+
+```bash
+./pio status
 ```
