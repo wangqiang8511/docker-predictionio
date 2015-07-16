@@ -7,4 +7,8 @@
   <name>zookeeper.znode.parent</name>
   <value>/hbase-unsecure</value>
   </property>
+  <property>
+  <name>hbase.defaults.for.version.skip</name>
+  <value>true</value>
+  </property>
 </configuration>
