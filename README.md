@@ -29,3 +29,10 @@ Run pio command.
 ```bash
 ./pio status
 ```
+
+Run pio with spark.
+
+
+```bash
+./pio-shell --with-spark
+```
