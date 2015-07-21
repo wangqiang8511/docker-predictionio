@@ -12,4 +12,8 @@ docker run -it --rm \
   -e ES_T_PORT=$ES_T_PORT \
   -e NAMENODE=$NAME_NODE \
   -e ZOOKEEPER_HOSTS=$ZOOKEEPER_HOSTS \
+  -e SPARK_MASTER="local" \
+  -e SPARK_IMAGE="predictionio:latest" \
+  -e AWS_ACCESS_KEY_ID="FOR_S3" \
+  -e AWS_SECRET_ACCESS_KEY="FOR_S3" \
   predictionio:latest $@

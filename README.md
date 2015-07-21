@@ -36,3 +36,21 @@ Run pio with spark.
 ```bash
 ./pio-shell --with-spark
 ```
+
+# Knonw Issue
+
+When we run the spark on mesos. It is hard to pass hadoop config files to 
+spark docker container. 
+
+Our stategy now is distribute the config file to all mesos slave hosts 
+with ansible and config the mesos volumes settings.
+
+```bash
+sudo ansible -vv -i plugins/inventory/ec2.py tag_cluster_clustername \
+	-s -m command -a 'aws s3 cp s3://bigdata-tmp/core-site.xml /tmp/core-site.xml --region us-east-1'
+```
+
+```bash
+pio import --appid 3 --input s3n://bigdata-tmp/test.json \
+	-- --conf "spark.mesos.executor.docker.volumes=/tmp/core-site.xml:/opt/PredictionIO/conf/core-site.xml"
+```
