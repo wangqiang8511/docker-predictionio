@@ -1,19 +1,19 @@
 #!/bin/bash
 
-ES_HOST=${ES_HOST:-localhost}
-ES_NAME=${ES_NAME:-elasticsearch}
-ES_T_PORT=${ES_T_PORT:-9300}
-NAMENODE=${NAMENODE:-localhost}
-ZOOKEEPER_HOSTS=${ZOOKEEPER_HOSTS:-localhost}
+PROJECT_HOME="$(cd "$(dirname "$0")"/..; pwd)"
+
+. $PROJECT_HOME/hack/set-default.sh
 
 docker run -it --rm \
   -e ES_HOST=$ES_HOST \
   -e ES_NAME=$ES_NAME \
   -e ES_T_PORT=$ES_T_PORT \
-  -e NAMENODE=$NAME_NODE \
+  -e NAMENODE=$NAMENODE \
   -e ZOOKEEPER_HOSTS=$ZOOKEEPER_HOSTS \
+  -e ZOOKEEPER_ZNODE_PARENT=$ZOOKEEPER_ZNODE_PARENT \
   -e SPARK_MASTER="local" \
   -e SPARK_IMAGE="predictionio:latest" \
   -e AWS_ACCESS_KEY_ID="FOR_S3" \
   -e AWS_SECRET_ACCESS_KEY="FOR_S3" \
-  predictionio:latest $@
+  --entrypoint="/bin/sh" \
+  $IMAGE $@

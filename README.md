@@ -47,7 +47,7 @@ with ansible and config the mesos volumes settings.
 
 ```bash
 sudo ansible -vv -i plugins/inventory/ec2.py tag_cluster_clustername \
-	-s -m command -a 'aws s3 cp s3://bigdata-tmp/core-site.xml /tmp/core-site.xml --region us-east-1'
+	-s -m command -a 'aws s3 cp s3://bigdata-tmp/core-site.xml /tmp/ --region us-east-1'
 ```
 
 ```bash

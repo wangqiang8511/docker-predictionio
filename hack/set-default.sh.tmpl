@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+ES_HOST=${ES_HOST:-localhost}
+ES_NAME=${ES_NAME:-elasticsearch}
+ES_T_PORT=${ES_T_PORT:-9300}
+NAMENODE=${NAMENODE:-localhost}
+ZOOKEEPER_HOSTS=${ZOOKEEPER_HOSTS:-localhost}
+ZOOKEEPER_ZNODE_PARENT=${ZOOKEEPER_ZNODE_PARENT:-/hbase}
+IMAGE=predictionio:0.0.5
+SPARK_MASTER=${SPARK_MASTER:-local}
+SPARK_IMAGE=${SPARK_MASTER:-predictionio:latest}
