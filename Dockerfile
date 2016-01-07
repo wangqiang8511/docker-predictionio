@@ -25,10 +25,10 @@ ENV PIO_HOME /opt/PredictionIO
 ENV PATH $PATH:$PIO_HOME/bin
 
 # Mesos
-RUN wget https://s3.amazonaws.com/bigdata-thirdparty/mesos_cluster/mesos_0.22.1/mesos-0.22.1.deb && \
-    dpkg --unpack mesos-0.22.1.deb && \
+RUN wget https://s3.amazonaws.com/bigdata-thirdparty/mesos_cluster/mesos_0.25.0/mesos-0.25.0.deb && \
+    dpkg --unpack mesos-0.25.0.deb && \
     apt-get install -f -y && \
-    rm mesos-0.22.1.deb && \
+    rm mesos-0.25.0.deb && \
     apt-get clean
 
 # Add config
